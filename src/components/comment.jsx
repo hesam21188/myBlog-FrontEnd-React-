@@ -45,7 +45,7 @@ class Comment extends Component {
           }
         );
         this.setState({ sending: false });
-        this.props.comment_new(response.data);
+        this.props.comment_new();
         console.log(response);
       } catch (error) {
         this.setState({ sending: false });

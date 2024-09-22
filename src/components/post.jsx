@@ -14,11 +14,14 @@ class Post extends Component {
     console.log(response);
     this.setState({ post: response.data });
   }
-  new_comment = (comment) => {
-    new_post = { ...this.state.post };
-    new_post.comments.append(comment);
-    this.setState({ post: new_post });
+  new_comment = async () => {
+    const response = await axios.get(
+      `http://localhost:8080/posts${window.location.pathname}`
+    );
+    console.log(response);
+    this.setState({ post: response.data });
   };
+
   render() {
     return (
       <>
